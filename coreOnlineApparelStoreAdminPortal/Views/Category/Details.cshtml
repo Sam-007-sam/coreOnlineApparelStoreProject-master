@@ -1,0 +1,52 @@
+﻿@model coreOnlineApparelStoreAdminPortal.Models.Category
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details of the Category</h2>
+@*<label asp-for="CategoryId"></label>
+<input type="text" asp-for="CategoryId" />
+<br />
+<label asp-for="CategoryName"></label>
+<input type="text" asp-for="CategoryName" />
+<br />
+<label asp-for="CategoryDescription"></label>
+<input type="text" asp-for="CategoryDescription" />
+<br />
+
+<a asp-controller="Category" asp-action="Index">BackToList</a>*@
+
+<div class="row">
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+    <div class="col-lg-4">
+        
+        <div class="form-group">
+            <label for="CategoryId">CategoryId</label>
+            <div class="form-control">
+                @Html.DisplayFor(m => m.CategoryId)
+            </div>
+            @*<input type="text" class="form-control" asp-for="CategoryId" />*@
+            <br />
+            <label for="CategoryName">CategoryName</label>
+            <div class="form-control">
+                @Html.DisplayFor(m => m.CategoryName)
+            </div>
+            @*<input type="text" class="form-control" asp-for="CategoryName" />*@
+        </div>
+        <div class="form-group">
+            <label for="CategoryDescription">CategoryDescription</label>
+            <div class="form-control">
+                @Html.DisplayFor(m => m.CategoryDescription)
+            </div>
+            @*<input type="text" class="form-control" asp-for="CategoryDescription" />*@
+        </div>
+            <a asp-controller="Category" asp-action="Index"><button type="submit" class="btn btn-primary"> BackToList</button></a>
+       
+    </div>
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+</div>

@@ -1,0 +1,52 @@
+﻿@model coreOnlineApparelStoreAdminPortal.Models.Vendor
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Editing Vendor</h2>
+@*<form asp-action="Edit" asp-controller="Vendor">
+        <input type="hidden" asp-for="VendorId" />
+        <br />
+        <label asp-for="VendorName"></label>
+        <input type="text" asp-for="VendorName" />
+        <br />
+        <label asp-for="VendorEmail"></label>
+        <input type="text" asp-for="VendorEmail" />
+        <br />
+        <label asp-for="VendorPhoneNo"></label>
+        <input type="text" asp-for="VendorPhoneNo" />
+        <br />
+        <input type="submit" value="Save" />
+    </form>*@
+
+<div class="row">
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+    <div class="col-lg-4">
+        <form asp-action="Edit" asp-controller="Vendor">
+            <div class="form-group">
+                <label for="VendorId">VendorId</label>
+                <input type="text" class="form-control" asp-for="VendorId" />
+                <br />
+                <label for="VendorName">VendorName</label>
+                <input type="text" class="form-control" asp-for="VendorName" />
+                <br />
+                <label for="VendorEmail">VendorEmail</label>
+                <input type="text" class="form-control" asp-for="VendorEmail">
+            </div>
+            <div class="form-group">
+                <label for="VendorPhoneNo">VendorPhoneNo</label>
+                <input type="text" class="form-control" asp-for="VendorPhoneNo">
+            </div>
+            <button type="submit" class="btn btn-primary">Edit</button>
+        </form>
+        <br />
+        <a asp-controller="Vendor" asp-action="Index"><button type="submit" class="btn btn-primary">BackToList</button></a>
+
+    </div>
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+</div>

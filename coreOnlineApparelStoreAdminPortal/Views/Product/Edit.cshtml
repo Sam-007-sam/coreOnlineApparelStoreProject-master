@@ -1,0 +1,89 @@
+﻿@model coreOnlineApparelStoreAdminPortal.Models.Product
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Editing Product</h2>
+@*<form asp-action="Edit" asp-controller="Product">
+        <input type="hidden" asp-for="ProductId" />
+        <br />
+        <label asp-for="VendorId"></label>
+        <select asp-for="VendorId" asp-items="ViewBag.b"></select>
+        <br />
+        <label asp-for="CategoryId"></label>
+        <select asp-for="CategoryId" asp-items="ViewBag.a" ></select>
+        <br />
+        <label asp-for="ProductName"></label>
+        <input type="text" asp-for="ProductName" />
+        <br />
+        <label asp-for="ProductPrice"></label>
+        <input type="text" asp-for="ProductPrice" />
+        <br />
+        <label asp-for="ProductQuantity"></label>
+        <input type="text" asp-for="ProductQuantity" />
+        <br />
+        <label asp-for="ProductSize"></label>
+        <input type="text" asp-for="ProductSize" />
+        <br />
+        <label asp-for="ProductDescription"></label>
+        <input type="text" asp-for="ProductDescription" />
+        <br />
+        <input type="submit" value="Save" />
+    </form>*@
+
+<div class="row">
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+    <div class="col-lg-4">
+        <form asp-action="Edit" asp-controller="Product">
+            <div class="form-group">
+                <label for="ProductId">ProductId</label>
+                <input type="text" class="form-control" asp-for="ProductId" />
+                <br />
+                <label for="ProductName">ProductName</label>
+                <input type="text" class="form-control" asp-for="ProductName">
+            </div>
+            <div class="form-group">
+                <label for="ProductPrice">ProductPrice</label>
+                <input type="text" class="form-control" asp-for="ProductPrice">
+            </div>
+            <div class="form-group">
+                <label for="ProductQuantity">ProductQuantity</label>
+                <input type="text" class="form-control" asp-for="ProductQuantity">
+            </div>
+            <div class="form-group">
+                <label for="ProductSize">ProductSize</label>
+                <input type="text" class="form-control" asp-for="ProductSize">
+            </div>
+            <div class="form-group">
+                <label for="ProductImage">ProductImage</label>
+                <input type="text" class="form-control" asp-for="ProductImage">
+            </div>
+            <div class="form-group">
+                <label for="ProductDescription">ProductDescription</label>
+                <input type="text" class="form-control" asp-for="ProductDescription">
+            </div>
+            <div class="form-group">
+                <label for="CategoryId">CategoryId</label>
+                <input type="text" class="form-control" asp-for="CategoryId">
+            </div>
+            <div class="form-group">
+                <label for="VendorId">VendorId</label>
+                <input type="text" class="form-control" asp-for="VendorId">
+            </div>
+            <div class="form-group">
+                <label for="BrandId">BrandId</label>
+                <input type="text" class="form-control" asp-for="BrandId">
+            </div>
+            <button type="submit" class="btn btn-primary">Edit</button>
+              </form>
+        <br />
+        <a asp-controller="Product" asp-action="Index"><button type="submit" class="btn btn-primary">BackToList</button></a>
+
+    </div>
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+</div>

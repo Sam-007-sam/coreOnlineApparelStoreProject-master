@@ -1,0 +1,62 @@
+﻿@model IEnumerable<ApparelStoreUserPortal.Models.Products>
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<section class="jumbotron text-center">
+    <div class="container">
+        <h1 class="jumbotron-heading">Apparel Store</h1>
+        <p class="lead text-muted">
+            Online shopping is a form of electronic commerce which allows consumer to directly buy products or services from a seller over the Internet using a web browser.
+            An online shop evokes the physical analogy of buying products or services at a bricks-and-mortar retailer or shopping center; the process is called business-to-consumer (B2C) online shopping.
+            And E-commerce platforms are growing day by day.
+        </p>
+        <p>
+            <a href="#" class="btn btn-primary my-2">Review to the Website</a>
+            <a asp-controller="home" asp-action="contact" class="btn btn-secondary my-2">Contact Us</a>
+        </p>
+    </div>
+</section>
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                @*thumnail start*@
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="@item.ProductImage" class="bd-placeholder-img card-img-top" width="100" height="200"/>
+                    
+                        <div class="card-body">
+                            <p class="card-text" style="font-weight:bold;">@item.ProductName</p>
+                            <p class="card-text">@item.ProductDescription</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+             
+                                    <a asp-controller="Detail" asp-action="Display" asp-route-id="@item.ProductId" class="btn btn-sm btn-outline-secondary">View Details</a>
+                                    <a asp-controller="Cart" asp-action="buy" asp-route-id="@item.ProductId" id="demo" onclick=myFunction(); class="btn btn-outline-secondary">Add To Cart</a> 
+                                    <script>
+                                        function myFunction() {
+                                            if (@item.ProductQuantity == 0) {
+                                                alert("Product is not Available")
+                                            }
+                                            else
+                                            {
+                                               alert("Product Added successfully")
+                                            }                                            
+                                        }
+                                    </script>
+                                </div>
+                                <small class="text-muted"> @item.ProductQuantity (Pcs)</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*thumbnail end*@
+            }
+
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+﻿@model ApparelStoreUserPortal.Models.FeedBacks
+@{
+    ViewData["Title"] = "Feedback";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>Feedback</h2>
+
+<div>
+    <form asp-action="Feedback" asp-controller="Home">
+        <div class="form-group">
+            <label for="Message">Message</label>
+            <input type="text" class="form-control" placeholder="Description" asp-for="Message">
+        </div>
+        <a class="btn btn-primary" asp-action="userProfile" asp-controller="Home">Submit</a>
+    </form>
+</div>

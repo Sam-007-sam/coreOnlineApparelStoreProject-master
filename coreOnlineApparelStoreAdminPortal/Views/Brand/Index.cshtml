@@ -1,0 +1,35 @@
+﻿@model IEnumerable<coreOnlineApparelStoreAdminPortal.Models.Brand>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Brand Details</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.BrandId)</th>
+            <th>@Html.DisplayNameFor(model => model.BrandName)</th>
+           
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var ban in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => ban.BrandId)</td>
+                <td>@Html.DisplayFor(modelItem => ban.BrandName)</td>
+             
+                <td>
+                    <a asp-controller="Brand" asp-action="Details" asp-route-id="@ban.BrandId"><button type="button" class="btn btn-light">Details</button></a>||
+                    <a asp-controller="Brand" asp-action="Edit" asp-route-id="@ban.BrandId"><button type="button" class="btn btn-light">Edit</button></a>||
+                    <a asp-controller="Brand" asp-action="Delete" asp-route-id="@ban.BrandId"><button type="button" class="btn btn-light">Delete</button></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-controller="Brand" asp-action="Create"><button type="button" class="btn btn-info">Create</button></a>
+

@@ -1,0 +1,41 @@
+﻿@model coreOnlineApparelStoreAdminPortal.Models.Brand
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Details of Brand</h2>
+<div class="row">
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+    <div class="col-lg-4">
+        
+        <div class="form-group">
+            <label for="BrandId">BrandId</label>
+            <div class="form-control">
+                @Html.DisplayFor(m => m.BrandId)
+            </div>
+
+            <br />
+            <label for="BrandName">BrandName</label>
+            <div class="form-control">
+                @Html.DisplayFor(m => m.BrandName)
+            </div>
+            @*<input type="text" class="form-control" asp-for="BrandName" />*@
+        </div>
+        <div class="form-group">
+            <label for="BrandDescription">BrandDescription</label>
+            <div class="form-control">
+                @Html.DisplayFor(m => m.BrandDescription)
+            </div>
+            @*<input type="text" class="form-control" asp-for="BrandDescription" />*@
+        </div>
+            <a asp-controller="Brand" asp-action="Index"><button type="submit" class="btn btn-primary"> BackToList</button></a>
+       
+    </div>
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+</div>
+

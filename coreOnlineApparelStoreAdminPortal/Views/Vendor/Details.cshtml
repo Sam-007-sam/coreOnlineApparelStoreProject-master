@@ -1,0 +1,51 @@
+﻿@model coreOnlineApparelStoreAdminPortal.Models.Vendor
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@*<h2>Details</h2>
+<label asp-for="VendorName"></label>
+<input type="text" asp-for="VendorName" />
+<br />
+<label asp-for="VendorEmail"></label>
+<input type="text" asp-for="VendorEmail" />
+<br />
+<label asp-for="VendorPhoneNo"></label>
+<input type="text" asp-for="VendorPhoneNo" />
+<br />
+<a asp-controller="Vendor" asp-action="Index">BackToList</a>*@
+<h2>Details of the Vendor</h2>
+<div class="row">
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+    <div class="col-lg-4">
+      
+        <div class="form-group">
+            <label for="VendorName">VendorName</label>
+            <div class="form-control">
+                @Html.DisplayFor(m => m.VendorName)
+            </div>
+            @*<input type="text" class="form-control" asp-for="VendorName" />*@
+            <br />
+            <label for="VendorEmail">VendorEmail</label>
+            <div class="form-control">
+                @Html.DisplayFor(m => m.VendorEmail)
+            </div>
+            @*<input type="text" class="form-control" asp-for="VendorEmail">*@
+        </div>
+        <div class="form-group">
+            <label for="VendorPhoneNo">VendorPhoneNo</label>
+            <div class="form-control">
+                @Html.DisplayFor(m => m.VendorPhoneNo)
+            </div>
+            @*<input type="text" class="form-control" asp-for="VendorPhoneNo">*@
+        </div>
+            <a asp-controller="Vendor" asp-action="Index"><button type="submit" class="btn btn-primary">BackToList</button></a>
+       
+    </div>
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+</div>

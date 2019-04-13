@@ -1,0 +1,33 @@
+﻿@model coreOnlineApparelStoreAdminPortal.Models.Brand
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>Edit Details of Brand</h2>
+<div class="row">
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+    <div class="col-lg-4">
+        <form asp-action="Edit" asp-controller="Brand">
+            <div class="form-group">
+                <label for="BrandId">BrandId</label>
+                <input type="text" class="form-control" asp-for="BrandId" />
+                <br />
+                <label for="BrandName">BrandName</label>
+                <input type="text" class="form-control" asp-for="BrandName"/>
+            </div>
+            <div class="form-group">
+                <label for="BrandDescription">BrandDescription</label>
+                <input type="text" class="form-control" asp-for="BrandDescription"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Edit</button>
+            <a asp-controller="Category" asp-action="Index"> <button type="submit" class="btn btn-primary">BackToList</button></a>
+        </form>
+    </div>
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+</div>
+
+

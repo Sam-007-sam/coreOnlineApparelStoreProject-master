@@ -1,0 +1,157 @@
+﻿@model ApparelStoreUserPortal.Models.Customers
+
+@{
+    ViewData["Title"] = "EditProfile";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+}
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 ">
+            <div class="list-group ">
+                <a href="#" class="list-group-item list-group-item-action active">Dashboard</a>
+                <a asp-controller="Home" asp-action="EditPassword" class="list-group-item list-group-item-action">Edit Password</a>
+                <a asp-controller="Home" asp-action="EditProfile" class="list-group-item list-group-item-action">View Profile</a>
+                <a asp-controller="Home" asp-action="Feedback" class="list-group-item list-group-item-action">FeedBack</a>
+                <a asp-controller="Home" asp-action="logout" class="list-group-item list-group-item-action">LogOut</a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Edit Your Profile</h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form method="post" asp-controller="Home" asp-action="EditProfile">
+                                <div class="form-group row">
+                                    <label for="username" class="col-4 col-form-label">User Name</label>
+                                    <div class="col-8">
+                                        <input asp-for="UserName" id="username" name="UserName" placeholder="Username" class="form-control here" required="required" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="name" class="col-4 col-form-label">First Name</label>
+                                    <div class="col-8">
+                                        <input asp-for="CustomerFirstName" id="name" name="CustomerFirstName" placeholder="First Name" class="form-control here" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="lastname" class="col-4 col-form-label">Last Name</label>
+                                    <div class="col-8">
+                                        <input asp-for="CustomerLastName" id="lastname" name="CustomerLastName" placeholder="Last Name" class="form-control here" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="lastname" class="col-4 col-form-label">Gender</label>
+                                    <div class="col-8">
+                                        <input asp-for="Gender" id="lastname" name="Gender" placeholder="Gender" class="form-control here" type="text">
+                                    </div>
+                                </div>
+
+                                <div class="form-group row">
+                                    <label for="email" class="col-4 col-form-label">Email</label>
+                                    <div class="col-8">
+                                        <input asp-for="Email" id="email" name="Gender" placeholder="Email" class="form-control here" required="required" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-4 col-form-label">Phone Number</label>
+                                    <div class="col-8">
+                                        <input asp-for="PhoneNumber" id="phoneNumber" name="PhoneNumber" placeholder="Phone Number" class="form-control here" required="required" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-4 col-form-label">Alternate Phone Number</label>
+                                    <div class="col-8">
+                                        <input asp-for="AlternatePhoneNumber" id="lastname" name="AlternatePhoneNumber" placeholder="Alternate Phone Number" class="form-control here" required="required" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="publicinfo" class="col-4 col-form-label">Address</label>
+                                    <div class="col-8">
+                                        <textarea asp-for="Address" id="publicinfo" name="Address" cols="40" rows="4" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-4 col-form-label">State</label>
+                                    <div class="col-8">
+                                        <input asp-for="State" id="lastname" name="State" placeholder="Last Name" class="form-control here" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-4 col-form-label">Country</label>
+                                    <div class="col-8">
+                                        <input asp-for="Country" id="lastname" name="Country" placeholder="Last Name" class="form-control here" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="publicinfo" class="col-4 col-form-label">Alternate Address</label>
+                                    <div class="col-8">
+                                        <textarea asp-for="Address2" id="Address2" name="Address2" cols="40" rows="4" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-4 col-form-label">Alternate State</label>
+                                    <div class="col-8">
+                                        <input asp-for="State2" id="State2" name="State2" placeholder="Alternate State" class="form-control here" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="lastname" class="col-4 col-form-label">Alternate Country</label>
+                                    <div class="col-8">
+                                        <input asp-for="Country2" id="Country2" name="Country2" placeholder="Alternate Country" class="form-control here" type="text">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="offset-4 col-8">
+                                        <button name="submit" type="submit" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary">Update My Profile</button>
+                                    </div>
+                                </div>
+                            </form>
+                                @*<div class="form-group row">
+                                    <div class="offset-4 col-8">
+                                        <button name="submit" type="submit" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary">Update My Profile</button>
+                                    </div>
+                                </div>*@                             
+                                @*<form method="post" asp-controller="Home" asp-action="EditProfile">
+                                     Modal 
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Edit</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    ...
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" asp-controller="Home" asp-action="EditProfile">Save changes</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>*@
+                           
+                           
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

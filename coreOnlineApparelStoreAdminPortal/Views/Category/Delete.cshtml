@@ -1,0 +1,56 @@
+﻿@model coreOnlineApparelStoreAdminPortal.Models.Category
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Are You Sure You Want To Delete</h3>
+
+@*<label asp-for="CategoryId"></label>
+    <input type="text" asp-for="CategoryId" />
+    <br />
+    <label asp-for="CategoryName"></label>
+    <input type="text" asp-for="CategoryName" />
+    <br />
+    <label asp-for="CategoryDescription"></label>
+    <input type="text" asp-for="CategoryDescription" />
+    <br />
+    <form asp-action="Delete" asp-controller="Category">
+        <input type="submit" value="Delete" />
+        <a asp-controller="Category" asp-action="Index">BackToList</a>
+    </form>*@
+<div class="row">
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+    <div class="col-lg-4">
+        <div class="form-group">
+            <div class="form-group">
+
+
+                <input type="hidden" class="form-control" asp-for="CategoryId">
+            </div>
+            <div class="form-group">
+
+                <label for="CategoryName">CategoryName</label>
+                <input type="text" class="form-control" asp-for="CategoryName">
+            </div>
+            <div class="form-group">
+                <label for="CategoryDescription">CategoryDescription</label>
+                <input type="text" class="form-control" asp-for="CategoryDescription">
+            </div>
+
+            <form asp-action="Delete" asp-controller="Category">
+                <button type="submit" class="btn btn-primary">Delete</button>
+                
+            </form>
+            <a asp-controller="Category" asp-action="Index"><button type="submit" class="btn btn-primary">BackToList</button></a>
+        </div>
+        <div class="col-lg-4">
+            &nbsp;
+        </div>
+    </div>
+
+
+
+

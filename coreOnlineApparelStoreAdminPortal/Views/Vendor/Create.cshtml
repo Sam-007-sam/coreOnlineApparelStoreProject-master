@@ -1,0 +1,40 @@
+﻿@model coreOnlineApparelStoreAdminPortal.Models.Vendor
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Creating New Vendor</h2>
+
+<div class="row">
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+    <div class="col-lg-4">
+        <form asp-action="Create" asp-controller="Vendor">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label for="VendorName">VendorName</label>
+                <input type="text" class="form-control" placeholder="Enter Name" asp-for="VendorName">
+                <span asp-validation-for="VendorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="VendorEmail">VendorEmail</label>
+                <input type="text" class="form-control" placeholder="Email" asp-for="VendorEmail">
+                <span asp-validation-for="VendorEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="VendorPhoneNo">VendorPhoneNo</label>
+                <input type="text" class="form-control" placeholder="Phone Number" asp-for="VendorPhoneNo">
+                <span asp-validation-for="VendorPhoneNo" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
+        <br />
+        <a asp-controller="Vendor" asp-action="Index"><button type="submit" class="btn btn-primary">BackToList</button></a>
+
+    </div>
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+</div>

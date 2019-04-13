@@ -1,0 +1,92 @@
+﻿@model coreOnlineApparelStoreAdminPortal.Models.Product
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h3>Are You Sure You Want To Delete</h3>
+
+@*<label asp-for="ProductId"></label>
+    <input type="text" asp-for="ProductId" />
+    <br />
+    <label asp-for="ProductName"></label>
+    <input type="text" asp-for="ProductName" />
+    <br />
+    <label asp-for="ProductPrice"></label>
+    <input type="text" asp-for="ProductPrice" />
+    <br />
+    <label asp-for="ProductQuantity"></label>
+    <input type="text" asp-for="ProductQuantity" />
+    <br />
+    <label asp-for="ProductDescription"></label>
+    <input type="text" asp-for="ProductDescription" />
+    <br />
+    <label asp-for="CategoryId"></label>
+    <input type="text" asp-for="CategoryId" />
+    <br />
+    <label asp-for="VendorId"></label>
+    <input type="text" asp-for="VendorId" />
+    <br />
+    <form asp-action="Delete" asp-controller="Product">
+        <input type="submit" value="Delete" />
+        <a asp-controller="Product" asp-action="Index">BackToList</a>
+    </form>*@
+<div class="row">
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+    <div class="col-lg-4">
+        <div class="form-group">
+
+
+            <input type="hidden" class="form-control" asp-for="ProductId">
+        </div>
+        <div class="form-group">
+
+            <label for="ProductName">ProductName</label>
+            <input type="text" class="form-control" asp-for="ProductName">
+        </div>
+        <div class="form-group">
+            <label for="ProductPrice">ProductPrice</label>
+            <input type="text" class="form-control" asp-for="ProductPrice">
+        </div>
+        <div class="form-group">
+            <label for="ProductQuantity">ProductQuantity</label>
+            <input type="text" class="form-control" asp-for="ProductQuantity">
+        </div>
+        <div class="form-group">
+            <label for="ProductSize">ProductSize</label>
+            <input type="text" class="form-control" asp-for="ProductSize">
+        </div>
+        <div class="form-group">
+            <label for="ProductImage">ProductImage</label>
+            <input type="text" class="form-control" asp-for="ProductImage">
+        </div>
+        <div class="form-group">
+            <label for="ProductDescription">ProductDescription</label>
+            <input type="text" class="form-control" asp-for="ProductDescription">
+        </div>
+        <div class="form-group">
+
+            <input type="hidden" class="form-control" asp-for="CategoryId">
+
+        </div>
+        <div class="form-group">
+
+            <input type="hidden" class="form-control" asp-for="VendorId">
+        </div>
+        <div class="form-group">
+
+            <input type="hidden" class="form-control" asp-for="BrandId">
+
+        </div>
+        <form asp-action="Delete" asp-controller="Product">
+            <button type="submit" class="btn btn-primary">Delete</button>
+            <a asp-controller="Product" asp-action="Index"><button type="submit" class="btn btn-primary">BackToList</button></a>
+        </form>
+    </div>
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+</div>

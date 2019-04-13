@@ -1,0 +1,47 @@
+﻿@model IEnumerable<coreOnlineApparelStoreAdminPortal.Models.Product>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Product Details</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.ProductId)</th>
+            <th>@Html.DisplayNameFor(model => model.ProductName)</th>
+            @*<th>@Html.DisplayNameFor(model => model.ProductPrice)</th>*@
+            @*<th>@Html.DisplayNameFor(model => model.ProductQuantity)</th>
+                <th>@Html.DisplayNameFor(model => model.ProductSize)</th>*@
+            @*<th>@Html.DisplayNameFor(model => model.ProductDescription)</th>*@
+            @*<th>@Html.DisplayNameFor(model => model.CategoryId)</th>
+                <th>@Html.DisplayNameFor(model => model.VendorId)</th>*@
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pro in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => pro.ProductId)</td>
+                <td>@Html.DisplayFor(modelItem => pro.ProductName)</td>
+                @*<td>@Html.DisplayFor(modelItem => pro.ProductPrice)</td>*@
+                @*<td>@Html.DisplayFor(modelItem => pro.ProductQuantity)</td>
+                    <td>@Html.DisplayFor(modelItem => pro.ProductSize)</td>*@
+                @*<td>@Html.DisplayFor(modelItem => pro.ProductDescription)</td>*@
+                @*<td>@Html.DisplayFor(modelItem => pro.CategoryId)</td>
+                    <td>@Html.DisplayFor(modelItem => pro.VendorId)</td>*@
+
+                <td>
+                    <a asp-controller="Product" asp-action="Details" asp-route-id="@pro.ProductId"><button type="button" class="btn btn-light">Details</button></a>||
+                    <a asp-controller="Product" asp-action="Edit" asp-route-id="@pro.ProductId"><button type="button" class="btn btn-light">Edit</button></a>||
+
+                    <a asp-controller="Product" asp-action="Delete" asp-route-id="@pro.ProductId"><button type="button" class="btn btn-light">Delete</button></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-controller="Product" asp-action="Create"><button type="button" class="btn btn-info">Create</button></a>

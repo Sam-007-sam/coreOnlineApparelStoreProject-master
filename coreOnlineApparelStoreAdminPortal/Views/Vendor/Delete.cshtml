@@ -1,0 +1,56 @@
+﻿@model coreOnlineApparelStoreAdminPortal.Models.Vendor
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Are You Sure You Want To Delete</h2>
+@*<label for="VendorId"></label>
+    <input type="text" asp-for="VendorId" />
+    <br />
+    <label for=" VendorName"></label>
+    <input type="text" asp-for="VendorName" />
+    <br />
+    <label for=" VendorEmail"></label>
+    <input type="text" asp-for="VendorEmail" />
+    <br />
+    <label for=" VendorPhoneNo"></label>
+    <input type="text" asp-for="VendorPhoneNo" />
+    <br />
+    <form asp-action="Delete" asp-controller="Vendor">
+        <input type="submit" value="Delete" />
+        <a asp-controller="Vendor" asp-action="BackToList"></a>
+    </form>*@
+<div class="row">
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+    <div class="col-lg-4">
+        <div class="form-group">
+
+            <input type="hidden" class="form-control" asp-for="VendorId">
+        </div>
+        <div class="form-group">
+
+            <label for="VendorName">VendorName</label>
+            <input type="text" class="form-control" asp-for="VendorName">
+        </div>
+        <div class="form-group">
+            <label for="VendorEmail">VendorEmail</label>
+            <input type="text" class="form-control" asp-for="VendorEmail">
+        </div>
+        <div class="form-group">
+            <label for="VendorPhoneNo">VendorPhoneNo</label>
+            <input type="text" class="form-control" asp-for="VendorPhoneNo">
+        </div>
+        <form asp-action="Delete" asp-controller="Vendor">
+            <button type="submit" class="btn btn-primary">Delete</button>
+
+        </form>
+        <a asp-controller="Vendor" asp-action="Index"><button type="submit" class="btn btn-primary">BackToList</button></a>
+    </div>
+    <div class="col-lg-4">
+        &nbsp;
+    </div>
+</div>
+

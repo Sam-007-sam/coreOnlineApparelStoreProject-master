@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ApparelStoreUserPortal.Models.Brands>
+
+@{
+    ViewData["Title"] = "Display";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+<h2>products of the selected Brand</h2>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BrandName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BrandDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrandName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BrandDescription)
+            </td>
+            <td>
+                <a asp-controller="brand" asp-action="DisplayByBrand" asp-route-id="@item.BrandId">Products</a> 
+             
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

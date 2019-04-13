@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ApparelStoreUserPortal.Models.Products>
+
+@{
+    ViewData["Title"] = "DisplayByBrand";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+
+
+
+<div>
+    <h4>Products of Selected Brand</h4>
+    <hr />
+</div>
+<div class="album py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                @*thumnail start*@
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img src="@item.ProductImage" class="bd-placeholder-img card-img-top" width="100" height="200" />
+
+                        <div class="card-body">
+                            <p class="card-text" style="font-weight:bold;">@item.ProductName</p>
+                            <p class="card-text">@item.ProductDescription</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    @*<button type="button" class="btn btn-sm btn-outline-secondary">View Details</button>*@
+                                    @*<button type="button" class="btn btn-sm btn-outline-secondary">Add to Cart</button>*@
+                                    <a asp-controller="Detail" asp-action="Display" asp-route-id="@item.ProductId" class="btn btn-sm btn-outline-secondary">View Details</a>
+                                    <a asp-controller="Cart" asp-action="buy" asp-route-id="@item.ProductId" class="btn btn-sm btn-outline-secondary" onclick="alert('Product Added Successfully')">Add To Cart</a>
+                                </div>
+                                <small class="text-muted">@item.ProductQuantity</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @*thumbnail end*@
+            }
+
+
+        </div>
+    </div>
+</div>

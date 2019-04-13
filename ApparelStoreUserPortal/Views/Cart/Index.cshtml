@@ -1,0 +1,153 @@
+﻿@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    <link href="~/css/modal.css" />
+}
+
+<h2>Cart Page</h2>
+<table class="table table-hover">
+    <tr>
+        <th>Option</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Photo</th>
+        <th>Proce</th>
+        <th>Quantiy</th>
+        <th>Sub Total</th>
+    </tr>
+
+    @foreach (var item in ViewBag.cart)
+    {
+        <tr>
+            <td><a asp-controller="cart" asp-action="remove" asp-route-id="@item.Products.ProductId">Remove</a></td>
+            <td>@item.Products.ProductId</td>
+            <td>@item.Products.ProductName</td>
+            <td><img src="@item.Products.ProductImage" width="60" /></td>
+            <td>  @item.Products.ProductPrice </td>
+            <td><a asp-controller="Cart" asp-action="Subratctbutton" asp-route-id="@item.Products.ProductId" class="btn">-</a>  @item.ItemQuantity  <a class="btn" asp-controller="cart" asp-action="Addbutton" asp-route-id="@item.Products.ProductId">+</a></td>
+            <td>@(item.Products.ProductPrice * item.ItemQuantity)</td>
+        </tr>
+    }
+    <tr>
+        <td align="right" colspan="6">Sum</td>
+        <td>@ViewBag.total</td>
+    </tr>
+
+
+</table>
+<br />
+<a asp-controller="home" asp-action="index" class="btn btn-primary">continue Shopping</a>
+<!--Modal: Login / Register Form-->
+<div class="modal fade" id="modalLRForm1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog cascading-modal" role="document">
+        <!--Content-->
+        <div class="modal-content">
+
+            <!--Modal cascading tabs-->
+            <div class="modal-c-tabs">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#panel9" role="tab">
+                            <i class="fas fa-user mr-1"></i>
+                            Login
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#panel10" role="tab">
+                            <i class="fas fa-user-plus mr-1"></i>
+                            Register
+                        </a>
+                    </li>
+                </ul>
+
+                <!-- Tab panels -->
+                <div class="tab-content">
+                    <!--Panel 7-->
+                    <div class="tab-pane fade in show active modal-body" id="panel9" role="tabpanel">
+
+                        <!--Body-->
+                        <form class="form-signin" method="post" asp-controller="Cart" asp-action="login1">
+                            <div class="form-label-group">
+                                <input type="text" name="username" class="form-control" placeholder="Email" required autofocus>
+                                <label for="username" class="sr-only">UserName</label>
+                            </div>
+                            <br />
+                            <div class="form-label-group">
+                                <input type="password" name="password" class="form-control" placeholder="password" required>
+                                <label for="password" class="sr-only">Password</label>
+                            </div>
+                            <br />
+                            <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Remember password</label>
+                            </div>
+                            <br />
+                            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                        </form>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <div class="options text-center text-md-right mt-1">
+                                <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+                            </div>
+                            <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                    <!--/.Panel 7-->
+                    <!--Panel 8-->
+                    <div class="tab-pane fade" id="panel10" role="tabpanel">
+
+                        <!--Body-->
+                        <div class="modal-body">
+                            <form class="form-signin" method="post" asp-controller="Cart" asp-action="register1">
+                                <div class="form-label-group">
+                                    <input type="text" name="username" class="form-control" placeholder="Email" required autofocus>
+                                    <label for="username" class="sr-only">UserName</label>
+                                </div>
+                                <br />
+                                <div class="form-label-group">
+                                    <input type="password" name="password" class="form-control" placeholder="password" required>
+                                    <label for="password" class="sr-only">Password</label>
+                                </div>
+                                <br />
+                                <div class="form-label-group">
+                                    <input type="text" name="firstname" class="form-control" placeholder="firstname" required>
+                                    <label for="firstname" class="sr-only">firstname</label>
+                                </div>
+                                <br />
+                                <div class="form-label-group">
+                                    <input type="text" name="lastname" class="form-control" placeholder="lastname" required>
+                                    <label for="lastname" class="sr-only">lastname</label>
+                                </div>
+                                <br />
+                                <div class="custom-control custom-checkbox mb-3">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                    <label class="custom-control-label" for="customCheck1">Remember password</label>
+                                </div>
+                                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+                            </form>
+
+                        </div>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                    <!--/.Panel 8-->
+                </div>
+
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<div class="text-center">
+    @if (ViewBag.i == 0)
+    {<a href="" class="btn btn-success" data-toggle="modal" data-target="#modalLRForm1">CheckOut</a> }
+    else
+    {<a class="btn btn-success" asp-action="Checkout" asp-controller="Cart">CheckOut</a>}
+
+</div>

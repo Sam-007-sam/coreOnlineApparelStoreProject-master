@@ -1,0 +1,36 @@
+﻿@model IEnumerable<coreOnlineApparelStoreAdminPortal.Models.Category>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Category Details</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.CategoryId)</th>
+            <th>@Html.DisplayNameFor(model => model.CategoryName)</th>
+           
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cat in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => cat.CategoryId)</td>
+                <td>@Html.DisplayFor(modelItem => cat.CategoryName)</td>
+               
+                <td>
+                   
+                    <a asp-controller="Category" asp-action="Details" asp-route-id="@cat.CategoryId"><button type="button" class="btn btn-light">Details</button></a>||
+                    <a asp-controller="Category" asp-action="Edit" asp-route-id="@cat.CategoryId"><button type="button" class="btn btn-light">Edit</button></a>||
+
+                    <a asp-controller="Category" asp-action="Delete" asp-route-id="@cat.CategoryId"><button type="button" class="btn btn-light">Delete</button></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a asp-controller="Category" asp-action="Create"><button type="button" class="btn btn-info">Create</button></a>

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<coreOnlineApparelStoreAdminPortal.Models.Vendor>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Vendor Details</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.VendorId)</th>
+            <th>@Html.DisplayNameFor(model => model.VendorName)</th>
+            
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var van in Model)
+        {
+        <tr>
+            <td>@Html.DisplayFor(modelItem => van.VendorId)</td>
+            <td>@Html.DisplayFor(modelItem => van.VendorName)</td>
+   
+            <td>
+                <a asp-controller="Vendor" asp-action="Details" asp-route-id="@van.VendorId"><button type="button" class="btn btn-light">Details</button></a>||
+                <a asp-controller="Vendor" asp-action="Edit" asp-route-id="@van.VendorId"><button type="button" class="btn btn-light">Edit</button></a>||
+
+                <a asp-controller="Vendor" asp-action="Delete" asp-route-id="@van.VendorId"><button type="button" class="btn btn-light">Delete</button></a>
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+
+<a asp-controller="Vendor" asp-action="Create"><button type="button" class="btn btn-info">Create</button></a>
+

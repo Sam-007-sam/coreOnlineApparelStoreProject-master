@@ -1,0 +1,119 @@
+﻿@model ApparelStoreUserPortal.Models.Customers
+
+@{
+    ViewData["Title"] = "userProfile";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 ">
+            <div class="list-group ">
+                <a asp-controller="Home" asp-action="index" class="list-group-item list-group-item-action active">Dashboard</a>
+                <a asp-controller="Home" asp-action="EditPassword" class="list-group-item list-group-item-action">Edit Password</a>
+                <a asp-controller="Home" asp-action="EditProfile" class="list-group-item list-group-item-action">Edit Profile</a>
+                <a asp-controller="Home" asp-action="Feedback" class="list-group-item list-group-item-action">FeedBack</a>
+                <a asp-controller="Home" asp-action="logout" class="list-group-item list-group-item-action">LogOut</a>
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4>Your Profile</h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <form>
+                                <div class="form-group row">
+                                    <label for="username" class="col-4 col-form-label">User Name*</label>
+                                    <div class="col-8">
+                                        <input asp-for="UserName" id="username" name="username" placeholder="Username" class="form-control here" required="required" type="text" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="name" class="col-4 col-form-label">First Name</label>
+                                    <div class="col-8">
+                                        <input asp-for="CustomerFirstName" id="name" name="name" placeholder="First Name" class="form-control here" type="text" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="lastname" class="col-4 col-form-label">Last Name</label>
+                                    <div class="col-8">
+                                        <input asp-for="CustomerLastName" id="lastname" name="lastname" placeholder="Last Name" class="form-control here" type="text" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="lastname" class="col-4 col-form-label">Gender</label>
+                                    <div class="col-8">
+                                        <input asp-for="Gender" id="lastname" name="lastname" placeholder="Last Name" class="form-control here" type="text" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-4 col-form-label">Email*</label>
+                                    <div class="col-8">
+                                        <input asp-for="Email" id="email" name="email" placeholder="Email" class="form-control here" required="required" type="text" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-4 col-form-label">Phone Number</label>
+                                    <div class="col-8">
+                                        <input asp-for="PhoneNumber" id="phoneNumber" name="lastname" placeholder="Phone Number" class="form-control here" required="required" type="text" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-4 col-form-label">Alternate Phone Number</label>
+                                    <div class="col-8">
+                                        <input asp-for="AlternatePhoneNumber" id="lastname" name="lastname" placeholder="Alternate Phone Number" class="form-control here" required="required" type="text" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="publicinfo" class="col-4 col-form-label">Address</label>
+                                    <div class="col-8">
+                                        <textarea asp-for="Address" id="publicinfo" name="publicinfo" cols="40" rows="4" class="form-control" readonly></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-4 col-form-label">State</label>
+                                    <div class="col-8">
+                                        <input asp-for="State" id="lastname" name="lastname" placeholder="Last Name" class="form-control here" type="text" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-4 col-form-label">Country</label>
+                                    <div class="col-8">
+                                        <input asp-for="Country" id="lastname" name="lastname" placeholder="Last Name" class="form-control here" type="text" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="publicinfo" class="col-4 col-form-label">Alternate Address</label>
+                                    <div class="col-8">
+                                        <textarea asp-for="Address2" id="publicinfo" name="publicinfo" cols="40" rows="4" class="form-control" readonly></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="email" class="col-4 col-form-label">Alternate State</label>
+                                    <div class="col-8">
+                                        <input asp-for="State2" id="lastname" name="lastname" placeholder="Alternate State" class="form-control here" type="text" readonly>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="lastname" class="col-4 col-form-label">Alternate Country</label>
+                                    <div class="col-8">
+                                        <input asp-for="Country2" id="lastname" name="lastname" placeholder="Alternate Country" class="form-control here" type="text" readonly>
+                                    </div>
+                                </div>                           
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

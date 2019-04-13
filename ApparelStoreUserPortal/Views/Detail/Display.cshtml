@@ -1,0 +1,74 @@
+﻿@model ApparelStoreUserPortal.Models.Products
+@{
+    ViewData["Title"] = "Display";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    <link rel="stylesheet" href="~/css/DetailsLayout.css" />
+}
+<div class="container">
+    <div class="card">
+        <div class="container-fliud">
+            <div class="wrapper row">
+                <div class="preview col-md-6">
+
+                    <div class="preview-pic tab-content">
+                        <div class="tab-pane active" id="pic-1"><img src="@Html.DisplayFor(m => m.ProductImage)" class="bd-placeholder-img card-img-top" width="100" heignt="200" /></div>
+                        <div class="tab-pane" id="pic-2"><img src="@Html.DisplayFor(m => m.ProductImage)" class="bd-placeholder-img card-img-top" width="100" heignt="200" /></div>
+                        <div class="tab-pane" id="pic-3"><img src="@Html.DisplayFor(m => m.ProductImage)" class="bd-placeholder-img card-img-top" width="100" heignt="200" /></div>
+                        <div class="tab-pane" id="pic-4"><img src="@Html.DisplayFor(m => m.ProductImage)" class="bd-placeholder-img card-img-top" width="100" heignt="200" /></div>
+                        <div class="tab-pane" id="pic-5"><img src="@Html.DisplayFor(m => m.ProductImage)" class="bd-placeholder-img card-img-top" width="100" heignt="200" /></div>
+                    </div>
+                    <ul class="preview-thumbnail nav nav-tabs">
+                        <li class="active"><a data-target="#pic-1" data-toggle="tab"><img src="@Html.DisplayFor(m => m.ProductImage)" class="bd-placeholder-img card-img-top" width="100" heignt="200" /></a></li>
+                        <li><a data-target="#pic-2" data-toggle="tab"><img src="@Html.DisplayFor(m => m.ProductImage)" class="bd-placeholder-img card-img-top" width="100" heignt="200" /></a></li>
+                        <li><a data-target="#pic-3" data-toggle="tab"><img src="@Html.DisplayFor(m => m.ProductImage)" class="bd-placeholder-img card-img-top" width="100" heignt="200" /></a></li>
+                        <li><a data-target="#pic-4" data-toggle="tab"><img src="@Html.DisplayFor(m => m.ProductImage)" class="bd-placeholder-img card-img-top" width="100" heignt="200" /></a></li>
+                        <li><a data-target="#pic-5" data-toggle="tab"><img src="@Html.DisplayFor(m => m.ProductImage)" class="bd-placeholder-img card-img-top" width="100" heignt="200" /></a></li>
+                    </ul>
+
+                </div>
+                <div class="details col-md-6">
+                    <h3 class="product-title">@Html.DisplayFor(m => m.ProductName)</h3>
+                    <div class="rating">
+                        <div class="stars">
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star checked"></span>
+                            <span class="fa fa-star"></span>
+                            <span class="fa fa-star"></span>
+                        </div>
+                        <span class="review-no">41 reviews</span>
+                    </div>
+                    <p class="product-description">@Html.DisplayFor(m => m.ProductDescription)</p>
+                    <h4 class="price">current price: <span>@Html.DisplayFor(m => m.ProductPrice)</span></h4>
+                    <p class="vote"><strong>91%</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
+                    <h5 class="sizes">
+                        sizes:
+                        <span class="size" data-toggle="tooltip" title="small">s</span>
+                        <span class="size" data-toggle="tooltip" title="medium">m</span>
+                        <span class="size" data-toggle="tooltip" title="large">l</span>
+                        <span class="size" data-toggle="tooltip" title="xtra large">xl</span>
+                    </h5>
+                    <h4 class="product-Category">Category: <span>@ViewBag.CategoryName.CategoryName</span></h4>
+                    <h4 class="product-Vendor">Vendor: <span>@ViewBag.vendorName.VendorName</span></h4>
+                    <h4 class="product-Brands">Brand: <span>@ViewBag.BrandName.BrandName</span></h4>
+                    @*<h5 class="colors">
+                            colors:
+                            <span class="color orange not-available" data-toggle="tooltip" title="Not In store"></span>
+                            <span class="color green"></span>
+                            <span class="color blue"></span>
+                        </h5>*@
+                    <div class="action">
+                        <a asp-controller="Home" asp-action="Index"><button class="Back-to-home btn btn-default" type="button">Back To Home</button></a>
+                        <a asp-controller="Cart" asp-action="Buy"><button class="add-to-cart btn btn-default" type="button" onclick="alert('Product Added Successfully')">add to cart</button></a>
+                   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+

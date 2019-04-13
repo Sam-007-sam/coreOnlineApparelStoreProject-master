@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ApparelStoreUserPortal.Models.Categories>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+}
+<h3>Content of the Selected Category</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryDescription)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryDescription)
+            </td>
+            <td>
+                <a asp-controller="category" asp-action="DisplayByCategory" asp-route-id="@item.CategoryId">Products</a> 
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

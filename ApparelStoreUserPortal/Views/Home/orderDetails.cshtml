@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "orderdetail";
+    Layout = "~/Views/Shared/_UserLayout.cshtml";
+    <link href="~/css/modal.css" />
+}
+<h2>Products</h2>
+<table class="table table-hover">
+    <tr>
+        <th>ProductId</th>
+        <th>ProductName</th>
+        <th>Action</th>
+    </tr>
+
+    @foreach (var item in ViewBag.pro)
+    {
+        <tr>
+            <td>@item.ProductId</td>
+            <td>@item.ProductName</td>
+            <td><a asp-controller="Detail" asp-action="Display" class="btn btn-info" asp-route-id="@item.ProductId">ProductDetails</a></td>
+        </tr>
+    }
+</table>
+<a asp-controller="home" asp-action="CustomerHistory" class="btn btn-info">back</a>
+<br />
