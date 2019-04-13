@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace ApparelStoreUserPortal.Models
+namespace coreOnlineApparelStoreAdminPortal.Models
 {
     public partial class OnlineApparelStoreDbContext : DbContext
     {
@@ -14,6 +14,7 @@ namespace ApparelStoreUserPortal.Models
             : base(options)
         {
         }
+
         public virtual DbSet<Admins> Admins { get; set; }
         public virtual DbSet<Brands> Brands { get; set; }
         public virtual DbSet<Carts> Carts { get; set; }
@@ -29,8 +30,8 @@ namespace ApparelStoreUserPortal.Models
         {
             if (!optionsBuilder.IsConfigured)
             {
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Server=TRD-503; Database=OnlineApparelStoreDb; Integrated Security=True;");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
+                optionsBuilder.UseSqlServer("Server=TRD-503;Database=OnlineApparelStoreDb;Integrated Security=True");
             }
         }
 
