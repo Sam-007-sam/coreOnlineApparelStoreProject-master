@@ -18,7 +18,6 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -29,7 +28,6 @@
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
                         <a class="dropdown-item" asp-controller="Category" asp-action="Display">Search By Category</a>
                         <a class="dropdown-item" asp-controller="brand" asp-action="Display">Search By Brand</a>
-
                     </div>
                 </li>
             </ul>
@@ -39,9 +37,8 @@
                 &nbsp;
 
                 <button asp-action="Index" asp-controller="Cart" class="btn btn-secondary my-2 my-sm-0">
-                   <img src="~/images/images (1).png" width="33" height="24"/> &nbsp;View Cart<sup> @Context.Session.GetString("cartitem")</sup>
+                    <img src="~/images/images (1).png" width="33" height="24" /> &nbsp;View Cart<sup> @Context.Session.GetString("cartitem")</sup>
                 </button>
-                
 
                 &nbsp;
                 @if (@Context.Session.GetString("name") == null)
@@ -57,128 +54,130 @@
                             <a class="dropdown-item" asp-action="CustomerHistory" asp-controller="Home">View Order History</a>
                             <a class="dropdown-item" asp-action="EditPassword" asp-controller="Home">Change Password</a>
                             <a class="dropdown-item" asp-action="Feedback" asp-controller="Home">FeedBack</a>
-                            <a class="dropdown-item" asp-action="logout" asp-controller="Home">Logout</a>                        
+                            <a class="dropdown-item" asp-action="logout" asp-controller="Home">Logout</a>
                         </div>
                     </div>
                 }
             </form>
         </div>
     </nav>
-
-    <main role="main" class="container">
-
-        <div class="starter-template">
-            <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                <div class="modal-dialog cascading-modal" role="document">
-                    <!--Content-->
-                    <div class="modal-content">
-
-                        <!--Modal cascading tabs-->
-                        <div class="modal-c-tabs">
-
-                            <!-- Nav tabs -->
-                            <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab">
-                                        <i class="fas fa-user mr-1"></i>
-                                        Login
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" data-toggle="tab" href="#panel8" role="tab">
-                                        <i class="fas fa-user-plus mr-1"></i>
-                                        Register
-                                    </a>
-                                </li>
-                            </ul>
-
-                            <!-- Tab panels -->
-                            <div class="tab-content">
-                                <!--Panel 7-->
-                                <div class="tab-pane fade in show active modal-body" id="panel7" role="tabpanel">
-
-                                    <!--Body-->
-                                    <form class="form-signin" method="post" asp-controller="Cart" asp-action="login">
-                                        <div class="form-label-group">
-                                            <input type="text" name="username" class="form-control" placeholder="Email" required autofocus>
-                                            <label for="username" class="sr-only">UserName</label>
-                                        </div>
-                                        <br />
-                                        <div class="form-label-group">
-                                            <input type="password" name="password" class="form-control" placeholder="password" required>
-                                            <label for="password" class="sr-only">Password</label>
-                                        </div>
-                                        <br />
-                                        <div class="custom-control custom-checkbox mb-3">
-                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                            <label class="custom-control-label" for="customCheck1">Remember password</label>
-                                        </div>
-                                        <br />
-                                        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
-                                    </form>
-                                    <!--Footer-->
-                                    <div class="modal-footer">
-                                        <div class="options text-center text-md-right mt-1">
-                                            <p>Forgot <a href="#" class="blue-text">Password?</a></p>
-                                        </div>
-                                        <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
-                                    </div>
-
-                                </div>
-                                <!--/.Panel 7-->
-                                <!--Panel 8-->
-                                <div class="tab-pane fade" id="panel8" role="tabpanel">
-
-                                    <!--Body-->
-                                    <div class="modal-body">
-                                        <form class="form-signin" method="post" asp-controller="Cart" asp-action="register">
-                                            <div class="form-label-group">
-                                                <input type="text" name="username" class="form-control" placeholder="Email" required autofocus>
-                                                <label for="username" class="sr-only">UserName</label>
-                                            </div>
-                                            <br />
-                                            <div class="form-label-group">
-                                                <input type="password" name="password" class="form-control" placeholder="password" required>
-                                                <label for="password" class="sr-only">Password</label>
-                                            </div>
-                                            <br />
-                                            <div class="form-label-group">
-                                                <input type="text" name="firstname" class="form-control" placeholder="firstname" required>
-                                                <label for="firstname" class="sr-only">firstname</label>
-                                            </div>
-                                            <br />
-                                            <div class="form-label-group">
-                                                <input type="text" name="lastname" class="form-control" placeholder="lastname" required>
-                                                <label for="lastname" class="sr-only">lastname</label>
-                                            </div>
-                                            <br />
-                                            <div class="custom-control custom-checkbox mb-3">
-                                                <input type="checkbox" class="custom-control-input" id="customCheck1">
-                                                <label class="custom-control-label" for="customCheck1">Remember password</label>
-                                            </div>
-                                            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
-                                        </form>
-
-                                    </div>
-                                    <!--Footer-->
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                                <!--/.Panel 8-->
-                            </div>
-
-                        </div>
-                    </div>
-                    <!--/.Content-->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 ">
+                <div class="list-group ">
+                    <a asp-controller="Home" asp-action="index" class="list-group-item list-group-item-action active">Dashboard</a>
+                    <a asp-controller="Home" asp-action="EditPassword" class="list-group-item list-group-item-action">Edit Password</a>
+                    <a asp-controller="Home" asp-action="EditProfile" class="list-group-item list-group-item-action">Edit Profile</a>
+                    <a asp-controller="Home" asp-action="Feedback" class="list-group-item list-group-item-action">FeedBack</a>
+                    <a asp-controller="Home" asp-action="logout" class="list-group-item list-group-item-action">LogOut</a>
                 </div>
             </div>
-            @RenderBody()
+            </div>
         </div>
-    </main><!-- /.container -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+            <main role="main" class="container">
+                <div class="starter-template">
+                    <div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog cascading-modal" role="document">
+                            <!--Content-->
+                            <div class="modal-content">
+                                <!--Modal cascading tabs-->
+                                <div class="modal-c-tabs">
+                                    <!-- Nav tabs -->
+                                    <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab">
+                                                <i class="fas fa-user mr-1"></i>
+                                                Login
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-toggle="tab" href="#panel8" role="tab">
+                                                <i class="fas fa-user-plus mr-1"></i>
+                                                Register
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!-- Tab panels -->
+                                    <div class="tab-content">
+                                        <!--Panel 7-->
+                                        <div class="tab-pane fade in show active modal-body" id="panel7" role="tabpanel">
+                                            <!--Body-->
+                                            <form class="form-signin" method="post" asp-controller="Cart" asp-action="login">
+                                                <div class="form-label-group">
+                                                    <input type="text" name="username" class="form-control" placeholder="Email" required autofocus>
+                                                    <label for="username" class="sr-only">UserName</label>
+                                                </div>
+                                                <br />
+                                                <div class="form-label-group">
+                                                    <input type="password" name="password" class="form-control" placeholder="password" required>
+                                                    <label for="password" class="sr-only">Password</label>
+                                                </div>
+                                                <br />
+                                                <div class="custom-control custom-checkbox mb-3">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                    <label class="custom-control-label" for="customCheck1">Remember password</label>
+                                                </div>
+                                                <br />
+                                                <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+                                            </form>
+                                            <!--Footer-->
+                                            <div class="modal-footer">
+                                                <div class="options text-center text-md-right mt-1">
+                                                    <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+                                                </div>
+                                                <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                        <!--/.Panel 7-->
+                                        <!--Panel 8-->
+                                        <div class="tab-pane fade" id="panel8" role="tabpanel">
+                                            <!--Body-->
+                                            <div class="modal-body">
+                                                <form class="form-signin" method="post" asp-controller="Cart" asp-action="register">
+                                                    <div class="form-label-group">
+                                                        <input type="text" name="username" class="form-control" placeholder="Email" required autofocus>
+                                                        <label for="username" class="sr-only">UserName</label>
+                                                    </div>
+                                                    <br />
+                                                    <div class="form-label-group">
+                                                        <input type="password" name="password" class="form-control" placeholder="password" required>
+                                                        <label for="password" class="sr-only">Password</label>
+                                                    </div>
+                                                    <br />
+                                                    <div class="form-label-group">
+                                                        <input type="text" name="firstname" class="form-control" placeholder="firstname" required>
+                                                        <label for="firstname" class="sr-only">firstname</label>
+                                                    </div>
+                                                    <br />
+                                                    <div class="form-label-group">
+                                                        <input type="text" name="lastname" class="form-control" placeholder="lastname" required>
+                                                        <label for="lastname" class="sr-only">lastname</label>
+                                                    </div>
+                                                    <br />
+                                                    <div class="custom-control custom-checkbox mb-3">
+                                                        <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                        <label class="custom-control-label" for="customCheck1">Remember password</label>
+                                                    </div>
+                                                    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+                                                </form>
+                                            </div>
+                                            <!--Footer-->
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-outline-info waves-effect ml-auto" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </div>
+                                        <!--/.Panel 8-->
+                                    </div>
+                                </div>
+                            </div>
+                            <!--/.Content-->
+                        </div>
+                    </div>
+                    @RenderBody()
+                </div>
+            </main><!-- /.container -->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
